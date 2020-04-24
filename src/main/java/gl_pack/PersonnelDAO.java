@@ -9,6 +9,9 @@ import java.time.ZoneId;
 
 public class PersonnelDAO implements CustomerDAO<Personnel> {
 
+	/**
+	 * Insert customer
+	 */
 	public int InsertCustomer(Personnel t){
 		// TODO Auto-generated method stub
 		int result = 0;
@@ -28,6 +31,9 @@ public class PersonnelDAO implements CustomerDAO<Personnel> {
 		return result;
 	}
 
+	/**
+	 * Delete customer
+	 */
 	public boolean deleteCustomer(Personnel t) {
 		// TODO Auto-generated method stub
 		int result = 0;
@@ -47,11 +53,17 @@ public class PersonnelDAO implements CustomerDAO<Personnel> {
 		return false;
 	}
 
+	/***
+	 * Update customer
+	 */
 	public void updateCustomer() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/**
+	 * Get all customer
+	 */
 	public void findAllCustomer() {
 		// TODO Auto-generated method stub
 		DerbyDaoFactory derby = new DerbyDaoFactory();
