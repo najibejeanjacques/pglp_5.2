@@ -12,10 +12,11 @@ public class Principal {
 		
 		Telephone tel1 = new Telephone("01345678903", "33054567533");
 		Telephone tel2 = new Telephone("03456433432", "22660108122");
-		personne1.getNumeroListe().add(tel1);
-		personne2.getNumeroListe().add(tel2);
+		personne1.getNumeroListe().add(0, tel1);
+		personne2.getNumeroListe().add(0, tel2);
 		
 		//derbyFactory.getTelephoneDAO().InsertCustomer(personne2);
+		//derbyFactory.getTelephoneDAO().deleteCustomer(201);
 		derbyFactory.getTelephoneDAO().findAllCustomer();
 		//derbyFactory.getPersonnelDAO().InsertCustomer(personne1);
 		//derbyFactory.getPersonnelDAO().InsertCustomer(personne2);

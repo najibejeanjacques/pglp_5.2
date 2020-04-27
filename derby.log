@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Tue Apr 14 23:52:08 CEST 2020:
-Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579) : instance a816c00e-0171-7aad-948a-000006513550 
+Mon Apr 27 04:00:02 CEST 2020:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579) : instance a816c00e-0171-b95c-d9c9-00000652ae70 
 dans le répertoire de base de données /home/ouedraogo/Personnels avec le chargeur de classe sun.misc.Launcher$AppClassLoader@75b84c92
 Chargé de file:/home/ouedraogo/Documents/eclipse-workspace/exercice_5.2/derby/lib/derby.jar
 java.vendor=Private Build
-java.runtime.version=1.8.0_242-8u242-b08-0ubuntu3~19.10-b08
+java.runtime.version=1.8.0_252-8u252-b09-1~19.10-b09
 user.dir=/home/ouedraogo/Documents/eclipse-workspace/exercice_5.2
 os.name=Linux
 os.arch=amd64

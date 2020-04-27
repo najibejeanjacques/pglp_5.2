@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class TelephoneDAO implements CustomerDAO<Personnel> {
+public class TelephoneDAO implements CustomerTelephoneDAO<Personnel> {
 
 	public int InsertCustomer(Personnel p) {
 		// TODO Auto-generated method stub
@@ -37,8 +37,22 @@ public class TelephoneDAO implements CustomerDAO<Personnel> {
 		return result;
 	}
 
-	public boolean deleteCustomer(Personnel t) {
+	public boolean deleteCustomer(int id) {
 		// TODO Auto-generated method stub
+		int result = 0;
+		DerbyDaoFactory derby = new DerbyDaoFactory();
+		try (Connection connect = derby.createConnection()) {
+			PreparedStatement prepare = connect.prepareStatement(
+					"DELETE FROM Telephone "
+					+ "WHERE id = ?");
+			prepare.setInt(1, id);
+			result = prepare.executeUpdate();
+			
+			System.out.println("Suppression " + id);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
@@ -52,12 +66,12 @@ public class TelephoneDAO implements CustomerDAO<Personnel> {
 		DerbyDaoFactory derby = new DerbyDaoFactory();
 		try (Connection connect = derby.createConnection()) {
 			PreparedStatement prepare = connect.prepareStatement(
-					"SELECT FIXPRO, FIXPERSO, PORTABLE, PERSONNELID FROM telephone ");
+					"SELECT FIXPRO, FIXPERSO, PORTABLE, PERSONNELID, ID FROM telephone ");
 			//prepare.setString(1, t.getNom());
 			ResultSet result = prepare.executeQuery();
 			System.out.println("Selection de tous les contacts des utilisateurs :");
 			String colonne2,colonne1,colonne3;
-			int colonne4;
+			int colonne4,colonneid;
 			while(result.next())
 			{
 				 do
@@ -66,7 +80,9 @@ public class TelephoneDAO implements CustomerDAO<Personnel> {
 					 colonne2=result.getString(2);
 					 colonne3=result.getString(3);
 					 colonne4=result.getInt(4);
-					 System.out.println(colonne1+" "+colonne2+ " "+colonne3+" "+colonne4);
+					 colonneid=result.getInt(5);
+					 System.out.println("ID \t FIxPro \t FixPerso \t\t Portable \t PersonnelID");
+					 System.out.println(colonneid +"\t"+colonne1+" \t"+colonne2+ "\t\t"+colonne3+"\t\t\t"+colonne4);
 				 }
 				 while(result.next());
 			}

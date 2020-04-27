@@ -29,13 +29,13 @@ public class Telephone implements java.io.Serializable {
 		this.portable = portable;
 		}
 	
-	public Telephone(String fixePro, String fixeperso, String Portable) {
+	public Telephone(String fixePro, String fixeperso, String portable) {
 		this.fixePro = fixePro;
 		this.fixePerso = fixePerso;
 		this.portable = portable;
 	}
 	
-	public Telephone(String fixePro, String Portable) {
+	public Telephone(String fixePro, String portable) {
 		this.fixePro = fixePro;
 		this.portable = portable;
 	}
