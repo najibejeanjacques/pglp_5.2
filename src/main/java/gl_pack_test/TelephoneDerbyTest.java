@@ -12,22 +12,18 @@ import gl_pack.Telephone;
 public class TelephoneDerbyTest {
 
 	@Test
-	public void TelephoneDerbyNumPortable()
-	{
+	public void TelephoneDerbyNumPortable() {
 		DAOFactory derbyFactory = DAOFactory.getDAOFactory(2);
-		Personnel personne1 = new Personnel.PersonnelBuilder("OUEDRAOGO", "Jamile Jean Luc")
-															.build();
+		Personnel personne1 = new Personnel.PersonnelBuilder("OUEDRAOGO", "Jamile Jean Luc").build();
 		Telephone tel1 = new Telephone("01345678903", "33054567533");
 		personne1.getNumeroListe().add(0, tel1);
 		assertTrue("Verifier", (personne1.getNumeroListe().get(0).getportable() == "33054567533"));
 	}
-	
+
 	@Test
-	public void TelephoneDerbyFixPro()
-	{
+	public void TelephoneDerbyFixPro() {
 		DAOFactory derbyFactory = DAOFactory.getDAOFactory(2);
-		Personnel personne1 = new Personnel.PersonnelBuilder("OUEDRAOGO", "Jamile Jean Luc")
-															.build();
+		Personnel personne1 = new Personnel.PersonnelBuilder("OUEDRAOGO", "Jamile Jean Luc").build();
 		Telephone tel1 = new Telephone("01345678903", "33054567533");
 		personne1.getNumeroListe().add(0, tel1);
 		assertTrue("Verifier", (personne1.getNumeroListe().get(0).getportable() == "01345678903"));

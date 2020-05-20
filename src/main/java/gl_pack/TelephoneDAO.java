@@ -44,10 +44,10 @@ public class TelephoneDAO implements CustomerTelephoneDAO<Personnel> {
 		try (Connection connect = derby.createConnection()) {
 			PreparedStatement prepare = connect.prepareStatement(
 					"DELETE FROM Telephone "
-					+ "WHERE id = ?");
+							+ "WHERE id = ?");
 			prepare.setInt(1, id);
 			result = prepare.executeUpdate();
-			
+
 			System.out.println("Suppression " + id);
 		}
 		catch (SQLException e) {
@@ -58,7 +58,7 @@ public class TelephoneDAO implements CustomerTelephoneDAO<Personnel> {
 
 	public void updateCustomer() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void findAllCustomer() {
@@ -74,24 +74,24 @@ public class TelephoneDAO implements CustomerTelephoneDAO<Personnel> {
 			int colonne4,colonneid;
 			while(result.next())
 			{
-				 do
-				 {
-					 colonne1=result.getString(1);
-					 colonne2=result.getString(2);
-					 colonne3=result.getString(3);
-					 colonne4=result.getInt(4);
-					 colonneid=result.getInt(5);
-					 System.out.println("ID \t FIxPro \t FixPerso \t\t Portable \t PersonnelID");
-					 System.out.println(colonneid +"\t"+colonne1+" \t"+colonne2+ "\t\t"+colonne3+"\t\t\t"+colonne4);
-				 }
-				 while(result.next());
+				do
+				{
+					colonne1=result.getString(1);
+					colonne2=result.getString(2);
+					colonne3=result.getString(3);
+					colonne4=result.getInt(4);
+					colonneid=result.getInt(5);
+					System.out.println("ID \t FIxPro \t FixPerso \t\t Portable \t PersonnelID");
+					System.out.println(colonneid +"\t"+colonne1+" \t"+colonne2+ "\t\t"+colonne3+"\t\t\t"+colonne4);
+				}
+				while(result.next());
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-		
-	}
+
+}
 
